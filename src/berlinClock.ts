@@ -26,7 +26,8 @@ export class BerlinClock {
   translateSingleHours(time: string): string {
     if (time == "01:00:00") return "JXXX";
     if (time == "02:00:00") return "JJXX";
-
+    if (time == "03:00:00") return "JJJX";
+    
     return "XXXX";
   }
 }

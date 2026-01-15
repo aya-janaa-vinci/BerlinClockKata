@@ -117,5 +117,10 @@ describe("BerlinClock", () => {
       const actual = berlinClock.translateSingleHours("02:00:00");
       expect(actual).toBe("JJXX");
     });
+
+    it("should return JJJX when given 02:00:00", () => {
+      const actual = berlinClock.translateSingleHours("03:00:00");
+      expect(actual).toBe("JJJX");
+    });
   });
 });
