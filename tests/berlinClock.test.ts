@@ -9,5 +9,13 @@ describe("BerlinClock", () => {
 
       expect(actual).toBe("XXXX"); //X représente la lampe
     });
+
+    it("should return JXXX when given 00:01:00", () => {
+        let berlinClock = new BerlinClock();
+
+        const actual = berlinClock.translateSingleMinutes("00:01:00")
+
+        expect(actual).toBe("JXXX");
+    })
   });
 });
