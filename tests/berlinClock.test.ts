@@ -73,5 +73,10 @@ describe("BerlinClock", () => {
       const actual = berlinClock.translateFiveMinutes("00:30:00");
       expect(actual).toBe("JJRJJRXXXXX");
     });
+
+    it("should return JJRJJRJXXXX when given 00:35:00", () => {
+      const actual = berlinClock.translateFiveMinutes("00:35:00");
+      expect(actual).toBe("JJRJJRJXXXX");
+    });
   });
 });
