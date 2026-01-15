@@ -1,15 +1,13 @@
-import { BerlinClock } from "../types";
+import { BerlinClock } from "../src/berlinClock";
 
+describe("BerlinClock", () => {
+  describe("translate single minute", () => {
+    it("should return XXXX when given 00:00:00", () => {
+      let berlinClock = new BerlinClock();
 
-describe("berlin-clock", () => {
-    describe("simpleMinute", () => {
-        it("should return all lights off when given 00:00:00", () => {
+      const actual = berlinClock.translateSingleMinutes("00:00:00");
 
-const berlinClock = new BerlinClock();
-
-    const actual = berlinClock.convertMinuteLineOne("00:00:00")
-
-            expect(actual).toBe("XXXX"); //X représente la lampe
-        })
-    })
-})
+      expect(actual).toBe("XXXX"); //X représente la lampe
+    });
+  });
+});
