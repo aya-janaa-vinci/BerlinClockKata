@@ -6,4 +6,8 @@ export class BerlinClock {
     if(time == "00:04:00") return "JJJJ";
     return "XXXX";
   }
+
+  translateFiveMinutes(time : string) {
+    return "XXXXXXXXXXX";
+  }
 }
