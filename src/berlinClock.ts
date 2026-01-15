@@ -11,6 +11,7 @@ export class BerlinClock {
     if(time == "00:05:00") return "JXXXXXXXXXX";
     if(time == "00:10:00") return "JJXXXXXXXXX";
     if(time == "00:15:00") return "JJRXXXXXXXX";
+    if(time == "00:20:00") return "JJRJXXXXXXX";
     return "XXXXXXXXXXX";
   }
 }
