@@ -17,5 +17,12 @@ describe("BerlinClock", () => {
 
       expect(actual).toBe("JXXX");
     });
+
+    it("should return JJXX when given 00:02:00", () => {
+        
+        const actual = berlinClock.translateSingleMinutes("00:02:00");
+
+        expect(actual).toBe("JJXX");
+    })
   });
 });
