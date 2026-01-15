@@ -19,10 +19,23 @@ describe("BerlinClock", () => {
     });
 
     it("should return JJXX when given 00:02:00", () => {
-        
+
         const actual = berlinClock.translateSingleMinutes("00:02:00");
 
         expect(actual).toBe("JJXX");
+    });
+
+    it("should return JJJX when given 00:03:00", () => {
+
+        const actual = berlinClock.translateSingleMinutes("00:03:00");
+
+        expect(actual).toBe("JJJX");
+    });
+
+    it("should return JJJJ when given 00:04:00", () => {
+        const actual = berlinClock.translateSingleMinutes("00:04:00");
+
+        expect(actual).toBe("JJJJ");
     })
   });
 });
