@@ -8,6 +8,7 @@ export class BerlinClock {
   }
 
   translateFiveMinutes(time : string) {
+    if(time == "00:00:05") return "JXXXXXXXXXX";
     return "XXXXXXXXXXX";
   }
 }

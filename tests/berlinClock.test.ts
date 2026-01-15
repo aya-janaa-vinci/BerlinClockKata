@@ -44,6 +44,9 @@ describe("BerlinClock", () => {
       expect(actual).toBe("XXXXXXXXXXX");
     });
 
-    
+    it("should return JXXXXXXXXXX when given 00:00:05", () => {
+      const actual = berlinClock.translateFiveMinutes("00:00:05");
+      expect(actual).toBe("JXXXXXXXXXX");
+    })
   });
 });
