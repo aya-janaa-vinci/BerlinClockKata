@@ -128,6 +128,7 @@ describe("BerlinClock", () => {
       expect(actual).toBe("RRRR");
     });
   });
+
   describe("translate five hours", () => {
     let berlinClock = new BerlinClock();
 
@@ -135,6 +136,25 @@ describe("BerlinClock", () => {
       const actual = berlinClock.translateFiveHours("00:00:00");
       expect(actual).toBe("XXXX");
     });
-    
+
+    it("should return RXXX when given 05:00:00", () => {
+      const actual = berlinClock.translateFiveHours("05:00:00");
+      expect(actual).toBe("RXXX");
+    });
+
+    it("should return RRXX when given 10:00:00", () => {
+      const actual = berlinClock.translateFiveHours("10:00:00");
+      expect(actual).toBe("RRXX");
+    });
+
+    it("should return RRRX when given 15:00:00", () => {
+      const actual = berlinClock.translateFiveHours("15:00:00");
+      expect(actual).toBe("RRRX");
+    });
+
+    it("should return RRRR when given 20:00:00", () => {
+      const actual = berlinClock.translateFiveHours("20:00:00");
+      expect(actual).toBe("RRRR");
+    });
   });
 });
