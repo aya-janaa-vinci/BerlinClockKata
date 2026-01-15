@@ -1,7 +1,7 @@
 import { BerlinClock } from "../src/berlinClock";
 
 describe("BerlinClock", () => {
-  describe("translate single minute", () => {
+  describe("translate single minutes", () => {
     let berlinClock = new BerlinClock();
 
     it("should return XXXX when given 00:00:00", () => {
@@ -63,7 +63,7 @@ describe("BerlinClock", () => {
       const actual = berlinClock.translateFiveMinutes("00:20:00");
       expect(actual).toBe("JJRJXXXXXXX");
     });
-    
+
     it("should return JJRJJXXXXXX when given 00:25:00", () => {
       const actual = berlinClock.translateFiveMinutes("00:25:00");
       expect(actual).toBe("JJRJJXXXXXX");
@@ -97,6 +97,20 @@ describe("BerlinClock", () => {
     it("should return JJRJJRJJRJJ when given 00:55:00", () => {
       const actual = berlinClock.translateFiveMinutes("00:55:00");
       expect(actual).toBe("JJRJJRJJRJJ");
+    });
+  });
+
+  describe("translate single hours", () => {
+    let berlinClock = new BerlinClock();
+
+    it("should return XXXX when given 00:00:00", () => {
+      const actual = berlinClock.translateSingleHours("00:00:00");
+      expect(actual).toBe("XXXX");
+    });
+  
+    it("should return JXXX when given 01:00:00", () => {
+      const actual = berlinClock.translateSingleHours("01:00:00");
+      expect(actual).toBe("JXXX");
     });
   });
 });
