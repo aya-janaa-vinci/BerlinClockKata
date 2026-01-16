@@ -41,4 +41,8 @@ export class BerlinClock {
     return "XXXX";
   }
 
+  translateSingleSeconds(time : string): string {
+    return "X";
+  }
+
 }
