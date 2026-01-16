@@ -161,13 +161,33 @@ describe("BerlinClock", () => {
   describe("translate single seconds", () => {
     let berlinClock = new BerlinClock();
 
-    it("should return X when given an odd second", () => {
+    it("should return X when given 00:00:01", () => {
       const actual = berlinClock.translateSingleSeconds("00:00:01");
       expect(actual).toBe("X");
     });
 
-    it("should return J when given a pair second", () => {
+    it("should return X when given 00:00:02", () => {
       const actual = berlinClock.translateSingleSeconds("00:00:02");
+      expect(actual).toBe("J");
+    });
+
+    it("should return X when given 00:00:03", () => {
+      const actual = berlinClock.translateSingleSeconds("00:00:03");
+      expect(actual).toBe("X");
+    });
+
+    it("should return J when given 00:00:04", () => {
+      const actual = berlinClock.translateSingleSeconds("00:00:04");
+      expect(actual).toBe("J");
+    });
+
+    it("should return J when given 00:00:05", () => {
+      const actual = berlinClock.translateSingleSeconds("00:00:05");
+      expect(actual).toBe("X");
+    });
+
+    it("should return J when given 00:00:06", () => {
+      const actual = berlinClock.translateSingleSeconds("00:00:06");
       expect(actual).toBe("J");
     });
   });
