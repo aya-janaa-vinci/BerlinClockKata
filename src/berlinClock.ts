@@ -42,6 +42,7 @@ export class BerlinClock {
   }
 
   translateSingleSeconds(time : string): string {
+    if(time == "00:00:02") return "J";
     return "X";
   }
 

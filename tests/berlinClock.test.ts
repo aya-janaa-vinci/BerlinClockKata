@@ -165,5 +165,10 @@ describe("BerlinClock", () => {
       const actual = berlinClock.translateSingleSeconds("00:00:01");
       expect(actual).toBe("X");
     });
+
+    it("should return J when given a pair second", () => {
+      const actual = berlinClock.translateSingleSeconds("00:00:02");
+      expect(actual).toBe("J");
+    });
   });
 });
